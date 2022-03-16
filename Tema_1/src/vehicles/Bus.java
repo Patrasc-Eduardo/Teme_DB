@@ -6,12 +6,12 @@ public class Bus extends Vehicle {
     private int noPassengers;
     private Double ticketPrice;
     private ArrayList<Double> chargesNum = new ArrayList<>();
-    //private Double totalProfit;
+
 
     public Bus() {
         noPassengers = 0;
         ticketPrice = 0.0;
-        //totalProfit = 0.0;
+
     }
 
     public Bus(String color, boolean functional, int noPassengers, Double ticketPrice) {
@@ -40,7 +40,7 @@ public class Bus extends Vehicle {
         }
 
         super.setProfit(totalProf);
-        //this.setProfit(totalProf);
+
     }
 
     @Override
