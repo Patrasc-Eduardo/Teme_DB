@@ -1,7 +1,6 @@
-package vehicles;
+package tema1.vehicles;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 public class BusStation {
@@ -30,7 +29,7 @@ public class BusStation {
     }
 
     /**
-     * Sorts vehicles by profit
+     * Sorts tema1.vehicles by profit
      */
     public void sortVehicle() {
         System.out.println("------------------------ before sort: -------------------------------------");

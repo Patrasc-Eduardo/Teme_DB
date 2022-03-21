@@ -1,7 +1,12 @@
-import vehicles.Bus;
-import vehicles.BusStation;
-import vehicles.Taxi;
+package tema1.vehicles;
 
+class A {
+    void methodA() {
+        class B {
+
+        }
+    }
+}
 public class Test {
     public static void main(String[] args) {
         BusStation busStation = new BusStation();
@@ -15,5 +20,6 @@ public class Test {
         busStation.showTotalProfit();
         busStation.showAllVehicles();
         busStation.sortVehicle();
+
     }
 }

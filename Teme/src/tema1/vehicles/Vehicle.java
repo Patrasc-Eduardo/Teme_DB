@@ -1,4 +1,4 @@
-package vehicles;
+package tema1.vehicles;
 
 public abstract class Vehicle implements Comparable<Vehicle>{
 

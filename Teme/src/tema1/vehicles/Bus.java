@@ -1,4 +1,4 @@
-package vehicles;
+package tema1.vehicles;
 
 import java.util.ArrayList;
 
