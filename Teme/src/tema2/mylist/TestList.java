@@ -5,22 +5,27 @@ import java.util.stream.IntStream;
 
 public class TestList {
     public static void main(String[] args) {
-        MyList<Integer> list = new MyList<>(10);
-
-        IntStream.range(0, 11).forEach(list::add);
-
-        list.print();
-
-        list.add(11);
-
-        System.out.println();
-
-        list.print();
-
-        System.out.println();
-
-        System.out.println(list.lookup(12));
-        System.out.println(list.lookup(11));
+        //MyList<Integer> myList = new MyList<Integer>(Integer[].class, 10);
+//
+//        IntStream.range(1, 11).forEach(i -> myList.list[i - 1] = i);
+//
+//        myList.print();
+//
+//        myList.add(11);
+//
+//        System.out.println();
+//
+//        myList.print();
+//
+//        System.out.println();
+//
+//        System.out.println(myList.lookup(12));
+//        System.out.println(myList.lookup(11));
+//
+//        myList.list[0] = 1;
+//        myList.list[1] = 2;
+//
+//        System.out.println(myList.list.length);
 
     }
 
