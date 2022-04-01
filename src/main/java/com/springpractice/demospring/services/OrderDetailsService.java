@@ -35,4 +35,8 @@ public class OrderDetailsService {
     public void delete(OrderDetails orderDetails) {
         orderDetailsRepository.delete(orderDetails);
     }
+
+    public List<OrderDetails> getAllOrderDetailsByOrderId(Integer id) {
+        return orderDetailsRepository.getAllOrderDetailsByOrderId(id);
+    }
 }

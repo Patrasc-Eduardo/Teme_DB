@@ -1,21 +1,12 @@
 package com.springpractice.demospring.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.ReadOnlyProperty;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Builder
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class OrderDetails {
     @Id
     @GeneratedValue
@@ -24,14 +15,8 @@ public class OrderDetails {
     private Integer quantity;
     private Double priceEach;
 
-    @Id
-    @ReadOnlyProperty
-    private Integer orderId;
+    @ManyToOne
+    @JoinColumn( name = "order_id")
+    Order order;
 
-    public OrderDetails(Integer id, Integer productCode, Integer quantity, Double priceEach, Integer orderId) {
-        this.id = id;
-        this.productCode = productCode;
-        this.quantity = quantity;
-        this.priceEach = priceEach;
-    }
 }

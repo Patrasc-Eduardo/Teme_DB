@@ -25,8 +25,10 @@ public class OrderController {
 
   @PutMapping("/orders")
   public Order createOrder(@RequestBody Order order) {
-    orderService.insert(order);
-    return order;
+    System.out.println(order.toString());
+    Order order2 = orderService.insert(order);
+    System.out.println(order2.toString());
+    return order2;
   }
 
   @PostMapping("/orders/update")
@@ -49,8 +51,6 @@ public class OrderController {
 
   @GetMapping("/orders/filter")
   public List<Order> getOrdersByCostumerId(@RequestParam("customerId") Integer customerId) {
-    return orderService.getAllOrders().stream()
-        .filter(order -> order.getCustomerId() == customerId)
-        .collect(Collectors.toList());
+    return orderService.getAllOrdersByCustomId(customerId);
   }
 }

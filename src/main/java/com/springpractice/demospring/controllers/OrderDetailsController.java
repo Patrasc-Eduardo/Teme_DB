@@ -25,7 +25,7 @@ public class OrderDetailsController {
     return orderDetailsService.getById(id);
   }
 
-  @PostMapping("/order-details")
+  @PutMapping("/order-details")
   public OrderDetails createOrdDetails(@RequestBody OrderDetails orderDetails) {
     orderDetailsService.insert(orderDetails);
     return orderDetails;
@@ -39,8 +39,6 @@ public class OrderDetailsController {
 
   @GetMapping("/order-details/filter")
   public List<OrderDetails> getOrderDetailsByOrderId(@RequestParam("orderId") Integer orderId) {
-    return orderDetailsService.getAllOrderDetails().stream()
-        .filter(orderDetails -> orderDetails.getOrderId() == orderId)
-        .collect(Collectors.toList());
+    return orderDetailsService.getAllOrderDetailsByOrderId(orderId);
   }
 }

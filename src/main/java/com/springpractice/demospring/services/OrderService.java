@@ -36,4 +36,8 @@ public class OrderService {
     public void deleteById(Integer id) {
         orderRepository.deleteById(id);
     }
+
+    public List<Order> getAllOrdersByCustomId(Integer id) {
+        return orderRepository.getAllOrdersByCustomerId(id);
+    }
 }
