@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">CUSTOMERS </h1>
+<h2> Customer list : </h2>
+<div th:each="customer : ${customers}">
+    <span style="font-weight:bold" th:text="${customer.username}"></span>
+    <span th:text="${customer.city}"></span>
+    <span th:text="${customer.country}"></span>
+    <span th:text="${customer.postalCode}"></span>
+    <span th:text="${customer.address}"></span>
+    <br>
+</div>
+</body>
+</html>

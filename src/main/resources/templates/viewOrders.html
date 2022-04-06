@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 align="center">Orders </h1>
+<h2> Order list : </h2>
+<div th:each="order : ${orders}">
+    <span th:text="${order.description}"></span>
+    <span th:text="${order.orderDate}"></span>
+    <span th:text="${order.shippedDate}"></span>
+    <br>
+</div>
+</body>
+</html>
