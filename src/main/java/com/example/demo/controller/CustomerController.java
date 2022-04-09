@@ -1,15 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.dao.CustomerDAO;
-import com.example.demo.dto.CustomerDTO;
 import com.example.demo.model.Customer;
 import com.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 public class CustomerController {
@@ -27,14 +23,8 @@ public class CustomerController {
   }
 
   @PutMapping("/customers")
-  public void createCustomer(@RequestBody CustomerDTO customer) {
-    customerService.create(
-        new Customer(
-            customer.getUsername(),
-            customer.getCity(),
-            customer.getCountry(),
-            customer.getPostalCode(),
-            customer.getAddress()));
+  public void createCustomer(@RequestBody Customer customer) {
+    customerService.createCustomer(customer);
   }
 
   @PostMapping("/customers/update")

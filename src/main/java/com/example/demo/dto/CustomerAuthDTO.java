@@ -7,8 +7,9 @@ import lombok.Data;
 @Builder
 @Data
 @AllArgsConstructor
-public class OrderDTO {
-    private String description;
-    private String orderDate;
-    private String shippedDate;
+public class CustomerAuthDTO {
+    private String username;
+    private String email;
+    private String password;
+
 }

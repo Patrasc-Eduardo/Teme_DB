@@ -1,40 +1,35 @@
 package com.example.demo.service;
 
-import com.example.demo.dao.ProductDAO;
 import com.example.demo.model.Product;
+import com.example.demo.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @Service
 public class ProductService {
-  @Autowired ProductDAO productDAO;
+  @Autowired private ProductRepository productRepository;
 
-  public Optional<Product> get(Integer id) {
-    return productDAO.get(id);
-  }
+  public Optional<Product> get(Integer id) {return productRepository.findById(id);}
 
   public List<Product> getAllProducts() {
-    return productDAO.getAllProducts();
+    return productRepository.findAll();
   }
 
-  public void create(Product toCreate) {
-    productDAO.create(toCreate);
+  public void createProduct(Product toCreate) {
+    productRepository.save(toCreate);
   }
 
   public void delete(Product toDelete) {
-    productDAO.delete(toDelete);
+    productRepository.delete(toDelete);
   }
 
   public void deleteById(Integer id) {
-    productDAO.deleteById(id);
+    productRepository.deleteById(id);
   }
 
   public void update(Product toUpdate) {
-    productDAO.update(toUpdate);
+    productRepository.save(toUpdate);
   }
 }

@@ -1,15 +1,11 @@
 package com.example.demo.controller;
 
-import com.example.demo.dao.OrderDAO;
-import com.example.demo.dto.OrderDTO;
 import com.example.demo.model.Order;
 import com.example.demo.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 public class OrderController {
@@ -27,9 +23,8 @@ public class OrderController {
   }
 
   @PutMapping("/orders")
-  public void createOrder(@RequestBody OrderDTO order) {
-    orderService.create(
-        new Order(order.getDescription(), order.getOrderDate(), order.getShippedDate()));
+  public void createOrder(@RequestBody Order order) {
+    orderService.createOrder(order);
   }
 
   @PostMapping("/orders/update")

@@ -1,20 +1,15 @@
 package com.example.demo.controller;
 
-import com.example.demo.dao.ProductDAO;
-import com.example.demo.dto.ProductDTO;
 import com.example.demo.model.Product;
 import com.example.demo.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 public class ProductController {
-  @Autowired
-  ProductService productService;
+  @Autowired ProductService productService;
 
   @GetMapping("/products")
   public List<Product> getAllProducts() {
@@ -27,9 +22,8 @@ public class ProductController {
   }
 
   @PutMapping("/products")
-  public void createProduct(@RequestBody ProductDTO product) {
-    productService.create(
-        new Product(product.getProductCode(), product.getProductName(), product.getDescription()));
+  public void createProduct(@RequestBody Product product) {
+    productService.createProduct(product);
   }
 
   @PostMapping("/products/update")
