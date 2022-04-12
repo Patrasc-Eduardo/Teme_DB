@@ -34,21 +34,11 @@ public class UserService {
   public Stream<User> generateUserStream() {
     Faker faker = new Faker(); // random name generator
     Random r = new Random();
-    return Stream.of(new User(faker.name().fullName(), r.nextInt(101)),
-            new User(faker.name().fullName(), r.nextInt(101)),
-            new User(faker.name().fullName(), r.nextInt(101)));
-//    Stream.of(new User(faker.name().fullName(), r.nextInt(101)),
-//            new User(faker.name().fullName(), r.nextInt(101)),
-//            new User(faker.name().fullName(), r.nextInt(101)));
+    return Stream.of(
+        new User(faker.name().fullName(), r.nextInt(101)),
+        new User(faker.name().fullName(), r.nextInt(101)),
+        new User(faker.name().fullName(), r.nextInt(101)));
   }
-
-  //  public Stream<User> filterByAgeStream(int age, Stream<User> userStream) {
-  //    return userStream.filter(user -> user.getAge() >= 18);
-  //  }
-  //
-  //  public Stream<User> doubleUserAge(Stream<User> userStream) {
-  //    return userStream.map(user -> user.setAge(100));
-  //  }
 
   public ArrayList<User> filterByAgeStream(ArrayList<User> users) {
     return (ArrayList<User>)
