@@ -31,13 +31,13 @@ public class UserService {
     return user;
   }
 
-  public Stream<User> generateUserStream() {
+  public ArrayList<User> generateUserStream() {
     Faker faker = new Faker(); // random name generator
     Random r = new Random();
-    return Stream.of(
-        new User(faker.name().fullName(), r.nextInt(101)),
-        new User(faker.name().fullName(), r.nextInt(101)),
-        new User(faker.name().fullName(), r.nextInt(101)));
+    return (ArrayList<User>) Stream.of(
+        new User(r.nextInt(101), faker.name().fullName(), r.nextInt(101)),
+        new User(r.nextInt(101), faker.name().fullName(), r.nextInt(101)),
+        new User(r.nextInt(101), faker.name().fullName(), r.nextInt(101))).collect(Collectors.toList());
   }
 
   public ArrayList<User> filterByAgeStream(ArrayList<User> users) {

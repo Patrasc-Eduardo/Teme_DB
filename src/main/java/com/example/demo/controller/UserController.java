@@ -24,7 +24,7 @@ public class UserController {
   }
 
   @GetMapping("/create-stream")
-  public Stream<User> generateUserStream() {
+  public ArrayList<User> generateUserStream() {
     return userService.generateUserStream();
   }
 
